@@ -1,73 +1,132 @@
-# Welcome to your Lovable project
+# KYC Verification System (Full-Stack Web Application)
 
-## Project info
+## One-Line Summary
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+A secure, full-stack **KYC (Know Your Customer) Verification System** enabling document submission, real-time status tracking, and admin-level verification workflows, built using **React, Node.js, Express, and MongoDB**.
 
-## How can I edit this code?
+## Project Overview
 
-There are several ways of editing your application.
+This project replicates real-world **digital identity verification systems** used by banks, fintech companies, and regulatory platforms.
+The system allows:
+* **Users** to submit identity documents and track verification status
+* **Admins** to review, approve, or reject KYC submissions through a dedicated dashboard
+The application focuses on **security, scalability, and role-based access control**, making it highly relevant for enterprise and fintech environments.
 
-**Use Lovable**
+## Problem Statement
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Traditional KYC verification processes are:
+* Manual and time-consuming
+* Difficult to track and audit
+* Prone to human error
+This project solves the problem by implementing a **centralized, automated KYC workflow** with secure document handling and real-time verification updates.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Data & Storage
 
-**Use your preferred IDE**
+* **Database**: MongoDB
+* **Data Stored**:
+  * User credentials and roles (user / admin)
+  * KYC submission records
+  * Document URLs and timestamps
+  * Verification status (Pending / Verified / Rejected)
+No external dataset is used — all data is dynamically generated and managed.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Tech Stack 
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Frontend
+* React (Vite)
+* TypeScript
+* Tailwind CSS
+* Axios
+* Role-based routing
 
-Follow these steps:
+### Backend
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* RESTful APIs
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Authentication & Security
+* JWT (JSON Web Tokens)
+* Protected routes
+* Role-based access control (RBAC)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Utilities & Tools
+* Multer (file uploads)
+* MongoDB Compass
+* Git & GitHub
 
-# Step 3: Install the necessary dependencies.
-npm i
+## System Architecture & Workflow
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+1. User authentication using JWT
+2. Secure KYC document upload
+3. Storage of submissions in MongoDB
+4. Admin-only access to all submissions
+5. Admin verification (approve/reject)
+6. Real-time status updates on user dashboard
+
+## Key Features & Highlights
+
+* Secure KYC document upload pipeline
+* Role-based authentication (User / Admin)
+* Real-time KYC status tracking
+* Admin dashboard for centralized verification
+* Scalable REST API design
+* Clean, responsive UI using Tailwind CSS
+
+##  Application Output
+
+### User Dashboard
+* Submit identity documents
+* Track verification progress
+* View submitted documents and timestamps
+
+### Admin Dashboard
+* View all KYC submissions
+* Filter by verification status
+* Approve or reject submissions
+* Maintain audit-ready records
+  
+## How to Run the Project
+
+### Backend Setup
+
+```bash
+cd Backend
+npm install
+node server.js
+```
+
+Create `.env` inside `Backend`:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+```
+### Frontend Setup
+
+```bash
+cd Frontend
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Create `.env` inside `Frontend`:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```env
+VITE_API_URL=http://localhost:5000/api
+```
 
-**Use GitHub Codespaces**
+## Author
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+**Rutuja Topannavar**
+Undergraduate student with strong interest in **Full-Stack Development, Secure Web Applications, and System Design**.
+Experienced in building **end-to-end MERN-based applications** with real-world use cases in fintech and enterprise systems.
 
-## What technologies are used for this project?
+## Why This Project Matters
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+* Demonstrates **real-world system thinking**
+* Covers **authentication, authorization, and security**
+* Implements **end-to-end full-stack development**
+* Relevant to **fintech, banking, SaaS, and enterprise roles**
